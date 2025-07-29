@@ -27,6 +27,32 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TINYMCE_DEFAULT_CONFIG = {
+    'height':360,
+    'width': 1120,
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'silver',
+    'plugins': '''
+        textcolor save link image preview codesample contextmenu
+        table code lists fullscreen insertdatetime media nonbreaking
+        contextmenu directionality searchreplace wordcount visualblocks
+        visualchars code fullscreen autolink lists charmap print hr
+        anchor pagebreak
+    ''',
+    'toolbar1': '''
+        fullscreen preview bold italic underline | fontselect, fontsizeselect | 
+        forecolor backcolor | alignleft aligncenter alignright alignjustify | 
+        bullist numlist outdent indent table | link image media codesample |
+        ''',
+    'toolbar2': '''
+        visualblocks visualchars | charmap hr pagebreak nonbreaking anchor | code |
+        ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
+    }
 
 # Application definition
 
@@ -38,6 +64,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

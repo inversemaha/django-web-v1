@@ -1,0 +1,18 @@
+
+{% if messages %}
+<div class="container">
+    {% for message in messages %}
+        <script>
+            let color = '';
+            switch("{{ message.tags }}") {
+                case 'success': color = 'green'; break;
+                case 'info': color = 'blue'; break;
+                case 'warning': color = 'orange'; break;
+                case 'error': color = 'red'; break;
+                default: color = 'grey';
+            }
+            M.toast({html: "{{ message }}", classes: color + ' rounded', displayLength: 2000});
+        </script>
+    {% endfor %}
+</div>
+{% endif %}

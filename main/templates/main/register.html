@@ -9,7 +9,7 @@
                 {{ form.as_p }}
                 <button type="submit" class="btn waves-effect waves-light">Register</button>
             </form>
-            <p>Already have an account? <a href="/login"><strong>Login</strong> here</a>.</p>
+            <p>Already have an account? <a href="{% url 'main:login' %}"><strong>Login</strong> here</a>.</p>
         </div>
     </div>
 {% endblock %}

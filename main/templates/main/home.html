@@ -1,0 +1,17 @@
+<head>
+    {% load static %}
+    <link  href="{% static 'css/prism.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% for tut in tutorials %}
+        <p>{{ tut.title }}</p>
+        <p>{{ tut.created_at }}</p>
+        <p>{{ tut.description|safe }}</p>
+        {% if not forloop.last %}<hr>{% endif %}
+        {% empty %}
+        <p>No tutorials available.</p>
+    {% endfor %}
+</body>
+
+<script src="{% static 'js/prism.js' %}"></script>
